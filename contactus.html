@@ -1,0 +1,91 @@
+<!-- contactus.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - J-Cake Shop</title>
+    <link class="tab-icon" rel="icon" type="image/x-icon" href="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <header>
+
+        <div class="header">
+            <img class="cupcakelogo" src="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png" alt="cupcakelogo">
+
+
+            <ul class="nav-bar">
+                <li><a href="homepage.html">home</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="contactus.html">contact us</a></li>
+            </ul>
+
+            <div class="width-box"></div>
+            <div class="burger-menu-open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="burger-menu-close">
+                <span class="span1"></span>
+                <span class="span2"></span>
+            </div>
+        </div>
+    </header>
+    <div class="about-body">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form action="#" method="post" id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const burgerMenuOpen = document.querySelector(".burger-menu-open");
+            const burgerMenuClose = document.querySelector(".burger-menu-close");
+            const navBar = document.querySelector(".nav-bar");
+
+            burgerMenuOpen.addEventListener("click", function () {
+                burgerMenuClose.style.display = "block";
+                navBar.style.display = "flex";
+                burgerMenuOpen.style.display = "none";
+            });
+
+            burgerMenuClose.addEventListener("click", function () {
+                burgerMenuOpen.style.display = "block";
+                navBar.style.display = "none";
+                burgerMenuClose.style.display = "none";
+            });
+
+
+            const contactForm = document.getElementById("contactForm");
+
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+
+                alert("Form submitted! (This is a placeholder. Implement your form submission logic.)");
+            });
+        });
+    </script>
+</body>
+
+</html>

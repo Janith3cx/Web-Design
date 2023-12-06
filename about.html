@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web design</title>
+    <link class="tab-icon" rel="icon" type="image/x-icon" href="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <img class="cupcakelogo" src="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png" alt="cupcakelogo">
+
+
+            <ul class="nav-bar">
+                <li><a href="homepage.html">home</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="contactus.html">contact us</a></li>
+            </ul>
+
+
+            <div class="burger-menu-open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="burger-menu-close">
+                <span class="span1"></span>
+                <span class="span2"></span>
+            </div>
+        </div>
+    </header>
+    <div class="about-body">
+        <h1>About Us</h1>
+        <img width="100" height="100" src="E:/java jj/Uom-open/Web Design/assets/cupcake.png" alt="cupcake-image">
+        <p><strong> Welcome to J-Cake Shop, Where Sweet Dreams Come True!</strong><br><br>
+
+            At J-Cake Shop, we believe that every celebration deserves a touch of sweetness. Established with a passion
+            for baking and a commitment to crafting delectable treats, we bring you a delightful array of cakes that not
+            only satisfy your cravings but also become a centerpiece for your special moments.
+            <br><br>
+            <strong>Our Story</strong><br><br>
+            J-Cake Shop was founded in 2023 by J.J , a dedicated baker with a dream to create a haven for cake lovers.
+            What started as a small venture has now blossomed into a beloved destination for those who appreciate the
+            artistry of baking.
+            <br><br>
+            <strong>Our Philosophy</strong><br><br>
+            Quality Ingredients, Impeccable Taste: We take pride in using only the finest ingredients to ensure that
+            each bite of our cakes is a moment of pure indulgence. From premium chocolates to farm-fresh eggs, every
+            component is carefully selected to guarantee a delicious experience.
+
+            Artistry in Every Creation: Our skilled bakers are not just culinary experts; they are artists who pour
+            their creativity into every cake they bake. Whether it's a classic birthday cake or an intricately designed
+            wedding masterpiece, we believe in creating edible works of art.
+
+            Customer-Centric Approach: Your satisfaction is our top priority. We understand that every customer is
+            unique, and we are dedicated to accommodating your preferences, dietary needs, and special requests. Your
+            happiness is the measure of our success.
+            <br><br>
+            <strong>Our Range of Offerings</strong><br><br>
+            Celebration Cakes: From birthdays to anniversaries and every joyous occasion in between, our celebration
+            cakes are crafted to add sweetness to your milestones.
+
+            Custom Creations: Looking for something unique? Our custom cake service allows you to design a cake that
+            perfectly matches your vision. Share your ideas, and we'll bring them to life!
+
+            Cupcakes and More: Explore our range of cupcakes, cookies, and other sweet treats for those moments when you
+            need just a little indulgence.
+            <br><br>
+            <strong>Visit Us Today!</strong><br><br>
+            We invite you to step into our world of sweetness at J-Cake Shop. Whether you're planning a celebration or
+            simply craving a slice of happiness, our doors are open, and our ovens are ready to delight your taste buds.
+            <br>
+            Thank you for choosing J-Cake Shop, where every cake tells a story, and every story is sweet!
+        </p>
+    </div>
+    <footer>
+        <div class="footer">
+            <p>&copy;2023 J-Cake Shop</p>
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const burgerMenuOpen = document.querySelector(".burger-menu-open");
+            const burgerMenuClose = document.querySelector(".burger-menu-close");
+            const navBar = document.querySelector(".nav-bar");
+
+            burgerMenuOpen.addEventListener("click", function () {
+                
+                burgerMenuClose.style.display = "block";
+                navBar.style.display = "flex";
+                burgerMenuOpen.style.display = "none";
+            });
+
+            burgerMenuClose.addEventListener("click", function () {
+                
+                burgerMenuOpen.style.display = "block";
+                navBar.style.display = "none";
+                burgerMenuClose.style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</html>

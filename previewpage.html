@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Page</title>
+    <link class="tab-icon" rel="icon" type="image/x-icon" href="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <header>
+
+        <div class="header">
+            <img class="cupcakelogo" src="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png" alt="cupcakelogo">
+
+
+            <ul class="nav-bar">
+                <li><a href="homepage.html">home</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="contactus.html">contact us</a></li>
+            </ul>
+
+            <div class="width-box"></div>
+            <div class="burger-menu-open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="burger-menu-close">
+                <span class="span1"></span>
+                <span class="span2"></span>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <div class="preview-container">
+
+            <img id="preview-image" src="" alt="Image Preview">
+            <div class="image-info">
+                <h2 id="image-name"></h2>
+                <p id="additional-info"></p>
+                <p id="price-weight"></p>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const burgerMenuOpen = document.querySelector(".burger-menu-open");
+                const burgerMenuClose = document.querySelector(".burger-menu-close");
+                const navBar = document.querySelector(".nav-bar");
+
+                burgerMenuOpen.addEventListener("click", function () {
+                    burgerMenuClose.style.display = "block";
+                    navBar.style.display = "flex";
+                    burgerMenuOpen.style.display = "none";
+                });
+
+                burgerMenuClose.addEventListener("click", function () {
+                    burgerMenuOpen.style.display = "block";
+                    navBar.style.display = "none";
+                    burgerMenuClose.style.display = "none";
+                });
+                const imageUrl = decodeURIComponent(new URLSearchParams(window.location.search).get("image"));
+                console.log("Image URL:", imageUrl);
+
+                const previewImage = document.getElementById("preview-image");
+                const imageNameElement = document.getElementById("image-name");
+                const additionalInfoElement = document.getElementById("additional-info");
+                const priceWeight = document.getElementById("price-weight");
+
+                if (imageUrl) {
+                    previewImage.src = imageUrl;
+
+                    if (imageUrl.includes("butter-cake.jpeg")) {
+                        imageNameElement.textContent = "Butter Cake";
+                        additionalInfoElement.textContent = "Delicious buttery goodness.";
+                        priceWeight.textContent = "1 kg     Rs.1500.00"
+                    } else if (imageUrl.includes("chocolate-cake.jpeg")) {
+                        imageNameElement.textContent = "Chocolate Cake";
+                        additionalInfoElement.textContent = "Rich and decadent chocolate delight.";
+                        priceWeight.textContent = "1 kg     Rs.1200.00"
+                    } else if (imageUrl.includes("cup-cakes.jpeg")) {
+                        imageNameElement.textContent = "Cupcake";
+                        additionalInfoElement.textContent = "Cute and perfect for any occasion.";
+                        priceWeight.textContent = "1 qty     Rs.600.00"
+                    } else if (imageUrl.includes("dripping-cake.jpeg")) {
+                        imageNameElement.textContent = "Dripping Cake";
+                        additionalInfoElement.textContent = "A luxurious cake dripping with flavor.";
+                        priceWeight.textContent = "1 kg     Rs.4500.00"
+                    } else if (imageUrl.includes("ribbon-cake.jpeg")) {
+                        imageNameElement.textContent = "Ribbon Cake";
+                        additionalInfoElement.textContent = "Beautifully layered cake with ribbon-like patterns.";
+                        priceWeight.textContent = "1 kg     Rs.2000.00"
+                    }
+                } else {
+                    console.error("Image URL is null or undefined. Check the query parameter.");
+                }
+            });
+        </script>
+        <div class="pre-cake-image">
+            <img src="E:/java jj/Uom-open/Web Design/assets/just-cake.png">
+        </div>
+    </body>
+    <footer>
+        <div class="footer">
+            <p>&copy;2023 J-Cake Shop</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

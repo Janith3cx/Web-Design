@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web design</title>
+    <link class="tab-icon" rel="icon" type="image/x-icon" href="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="header">
+            <img class="cupcakelogo" src="E:/java jj/Uom-open/Web Design/assets/cupcakelogo.png" alt="cupcakelogo">
+
+
+            <ul class="nav-bar">
+                <li><a href="homepage.html">home</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="contactus.html">contact us</a></li>
+            </ul>
+
+            <div class="width-box"></div>
+            <div class="burger-menu-open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="burger-menu-close">
+                <span class="span1"></span>
+                <span class="span2"></span>
+            </div>
+        </div>
+    </header>
+    <div class="body">
+
+        
+
+        <div class="image-stage">
+            <a href="previewpage.html?image=assets/butter-cake.jpeg" class="image-preview" data-src="butter-cake.jpeg">
+                <div>
+                    <img width="100" height="100" alt="butter-cake"
+                        src="E:/java jj/Uom-open/Web Design/assets/butter-cake.jpeg">
+                    <h4>Butter Cakes</h4>
+                </div>
+            </a>
+
+            <a href="previewpage.html?image=assets/chocolate-cake.jpeg" class="image-preview" data-src="chocolate-cake.jpeg">
+                <div>
+                    <img width="100" height="100" alt="chocolate-cake"
+                        src="E:/java jj/Uom-open/Web Design/assets/chocolate-cake.jpeg">
+                    <h4>Butter Cakes</h4>
+                </div>
+            </a>
+
+            <a href="previewpage.html?image=assets/cup-cakes.jpeg" class="image-preview" data-src="cup-cakes.jpeg">
+                <div>
+                    <img width="100" height="100" alt="cup-cake"
+                        src="E:/java jj/Uom-open/Web Design/assets/cup-cakes.jpeg">
+                    <h4>Butter Cakes</h4>
+                </div>
+            </a>
+
+            <a href="previewpage.html?image=assets/dripping-cake.jpeg" class="image-preview" data-src="dripping-cake.jpeg">
+                <div>
+                    <img width="100" height="100" alt="dripping-cake"
+                        src="E:/java jj/Uom-open/Web Design/assets/dripping-cake.jpeg">
+                    <h4>Butter Cakes</h4>
+                </div>
+            </a>
+
+            <a href="previewpage.html?image=assets/ribbon-cake.jpeg" class="image-preview" data-src="ribbon-cake.jpeg">
+                <div>
+                    <img width="100" height="100" alt="ribbon-cake"
+                        src="E:/java jj/Uom-open/Web Design/assets/ribbon-cake.jpeg">
+                    <h4>Butter Cakes</h4>
+                </div>
+            </a>
+
+        </div>
+
+       
+
+        <table>
+            <tr>
+
+                <th>Name</th>
+                <th>Weight/Qty</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Butter Cake</td>
+                <td>1 kg</td>
+                <td>Rs.1500.00</td>
+            </tr>
+            <tr>
+                <td>Chocolate Cake</td>
+                <td>1 kg</td>
+                <td>Rs.1200.00</td>
+            </tr>
+            <tr>
+                <td>Cupcake</td>
+                <td>1</td>
+                <td>Rs.600.00</td>
+            </tr>
+            <tr>
+                <td>Dripping Cake</td>
+                <td>1 kg</td>
+                <td>Rs.4500.00</td>
+            </tr>
+            <tr>
+                <td>Ribbon Cake</td>
+                <td>1 kg</td>
+                <td>Rs.2000.00</td>
+            </tr>
+        </table>
+        <div class="delivery-stage">
+            <img class="delivery-bike" src="E:/java jj/Uom-open/Web Design/assets/delivery-bike.png">
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer">
+            <p>&copy;2023 J-Cake Shop</p>
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const burgerMenuOpen = document.querySelector(".burger-menu-open");
+            const burgerMenuClose = document.querySelector(".burger-menu-close");
+            const navBar = document.querySelector(".nav-bar");
+
+            burgerMenuOpen.addEventListener("click", function () {
+                burgerMenuClose.style.display = "block";
+                navBar.style.display = "flex";
+                burgerMenuOpen.style.display = "none";
+            });
+
+            burgerMenuClose.addEventListener("click", function () {
+                burgerMenuOpen.style.display = "block";
+                navBar.style.display = "none";
+                burgerMenuClose.style.display = "none";
+            });
+
+            const imagePreviews = document.querySelectorAll(".image-preview");
+            imagePreviews.forEach(function (preview) {
+                preview.addEventListener("click", function () {
+                    const imageUrl = preview.getAttribute("data-src");
+                    window.location.href = `previewpage.html?image=${encodeURIComponent(imageUrl)}`;
+                });
+            });    
+
+            const imageUrl = decodeURIComponent(new URLSearchParams(window.location.search).get("image"));
+            console.log("Image URL:", imageUrl);
+
+            const previewImage = document.getElementById("preview-image");
+
+            if (imageUrl) {
+                previewImage.src = imageUrl;
+            } else {
+                console.error("Image URL is null or undefined. Check the query parameter.");
+            }
+
+        });
+    </script>
+</body>
+
+</html>
